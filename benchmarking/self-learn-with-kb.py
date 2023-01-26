@@ -95,7 +95,7 @@ def predict(chat_log, max_tokens=250):
 								max_tokens=max_tokens,
 								top_p=1.0,
 								frequency_penalty=0.0,
-								presence_penalty=-0.6)
+								presence_penalty=0)
 	answer = response.choices[0].text.strip()
 	return answer
 

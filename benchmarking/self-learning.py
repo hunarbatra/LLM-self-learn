@@ -67,29 +67,16 @@ def make_template4(cot_answer):
 The final answer is:'''
 
 
-def predict(chat_log):
+def predict(chat_log, max_tokens=250):
 	response = completion.create(engine="text-davinci-003",
 								prompt=chat_log,
 								temperature=0.0,
-								max_tokens=250,
+								max_tokens=max_tokens,
 								top_p=1.0,
 								frequency_penalty=0.0,
-								presence_penalty=-0.6)
+								presence_penalty=0)
 	answer = response.choices[0].text.strip()
 	return answer
-
-
-def predict_naive(chat_log):
-    response = completion.create(engine="text-davinci-003",
-								prompt=chat_log,
-								temperature=0.0,
-								max_tokens=50,
-								top_p=1.0,
-								frequency_penalty=0.0,
-								presence_penalty=-0.6)
-    answer = response.choices[0].text.strip()
-    return answer
-
 
 questions, answers = [], []
 
@@ -112,7 +99,7 @@ def flow(chat_log, ques, correct_answer):
 	print(f'{white}')
 	question = ques
 	naive_log = naive_answer(question, questions, answers)
-	naive_response = predict_naive(naive_log)
+	naive_response = predict(naive_log, max_tokens=50)
 	print('\nNaive Response: ' + naive_response)
 	questions.append(question)
 	if correct_answer not in naive_response.split('Answer')[-1]:

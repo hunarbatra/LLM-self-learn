@@ -73,22 +73,9 @@ def predict(chat_log):
                                 max_tokens=250,
                                 top_p=1.0,
                                 frequency_penalty=0.0,
-                                presence_penalty=-0.6)
+                                presence_penalty=0)
     answer = response.choices[0].text.strip()
     return answer
-
-
-def predict_naive(chat_log):
-    response = completion.create(engine="text-davinci-003",
-                                prompt=chat_log,
-                                temperature=0.0,
-                                max_tokens=50,
-                                top_p=1.0,
-                                frequency_penalty=0.0,
-                                presence_penalty=-0.6)
-    answer = response.choices[0].text.strip()
-    return answer
-
 
 questions, answers = [], []
 
