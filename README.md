@@ -2,6 +2,8 @@
 
 ## LLMs with Google Queries access for self-learning
 
+<b>NOTE: Please create ```config.py``` file and store your API key there as ```api_key = 'YOUR-API-KEY'```<b>
+
 ```sandbox-script.py```: Run this script to play around with the Self-Learning model <br>
 ```/benchmarking/baselines```: Code for benchmarking baseline models including- Vanilla GPT-3, CoT and Few-shot CoT <br>
 ```/benchmarking```: Code for different model variants including the following--
