@@ -16,4 +16,4 @@ Benchmarking over MMLU:
 2. MMLU Global Facts Test
 <img src="https://github.com/hunarbatra/LLM-self-learn/blob/master/benchmarking/results/mmlu2.png" width=450>
 
-(please note: the code was written pretty quickly and might be a little messy for the benchmarking bit)
+(please note: the code was written pretty quickly in a few hours and might be a little messy for the benchmarking bit)
