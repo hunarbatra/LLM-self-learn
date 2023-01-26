@@ -10,11 +10,10 @@ import pandas as pd
 
 import time
 import random
+from config import api_key
 
 green = '\x1b[32m'
 white = '\x1b[37m'
-
-api_key = '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'
 
 openai.api_key = api_key
 completion = openai.Completion()
